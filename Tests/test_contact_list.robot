@@ -2,7 +2,7 @@
 Library        RequestsLibrary
 Library        Collections
 Suite Setup    Run Keywords
-...            Create Session should succeed
+...            Create Session should succeed    AND
 ...            Should be able to login
 
 
@@ -43,7 +43,7 @@ Should be able to delete contacts
     [Tags]    delete contact
     ${verify}=    Create Dictionary    Authorization=${token}
     ${response}=    Get On Session     contactList    ${CONTACT_ENDPOINT}    headers=${verify}    expected_status=any
-    
+
 
 Should be able to delete user
     [Tags]    delete user
